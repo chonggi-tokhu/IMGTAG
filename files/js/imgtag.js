@@ -102,15 +102,15 @@ var setimgdata = async (thisobj, cbfunc) => {
                     if (israw === 'canv') {
                         var newcanv = document.createElement("canvas");
                         thisobj.canvas = shadow.appendChild(newcanv);
-                        thisobj.canvas.width = thisobj.width;
-                        thisobj.canvas.height = thisobj.height;
+                        thisobj.canvas.width = thisobj.img.width;
+                        thisobj.canvas.height = thisobj.img.height;
                         thisobj.ctx = thisobj.canvas.getContext("2d");
                         thisobj.ctx.drawImage(thisobj, 0, 0);
                     } else if (israw === 'raw') {
                         var newcanv = document.createElement("canvas");
                         thisobj.canvas = shadow.appendChild(newcanv);
-                        thisobj.canvas.width = thisobj.width;
-                        thisobj.canvas.height = thisobj.height;
+                        thisobj.canvas.width = thisobj.img.width;
+                        thisobj.canvas.height = thisobj.img.height;
                         thisobj.ctx = thisobj.canvas.getContext("2d");
                         if (ColourgreyShorterJS.checkString(thisobj.imgdata)) {
                             var imgdata_a = [];
@@ -301,6 +301,8 @@ class customImg extends HTMLElement {
         this.src = this.getAttribute("src");
         this.img = this.appendChild(img);
         this.img.crossOrigin = 'anonymous';
+        this.width =this.img.width;
+        this.width =this.img.width;
         //var shadow = this.attachShadow({ mode: "open" });
         if (this.img.src.endsWith(".img0")) {
             console.log('data');
