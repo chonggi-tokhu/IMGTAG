@@ -114,8 +114,10 @@ var setimgdata = async (thisobj, cbfunc) => {
                         thisobj.ctx = thisobj.canvas.getContext("2d");
                             var imgdata_a = [];
                             var thisimgdata = '';
+                                console.log(data);
                             for (var i = 0; i < data.length; i++) {
                                 thisimgdata += data[i];
+                                console.log(data[i]);
                                 if (i % 6 === 0) {
                                     imgdata_a.push(thisimgdata);
                                     thisimgdata = '';
