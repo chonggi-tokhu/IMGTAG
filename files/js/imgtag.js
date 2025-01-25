@@ -261,7 +261,6 @@ class customImg extends HTMLElement {
             console.log('data');
             setimgdata(this, (thisobj, data) => {
                 this.imgdata = data;
-                if (true) {
                         console.log(this);
                     if (thisobj.imgtype === 'canv') {
                         var newcanv = document.createElement("canvas");
@@ -303,7 +302,7 @@ class customImg extends HTMLElement {
                                 this.ctx.fillRect(x, y, 1, 1);
                                 this.ctx.closePath();
                             }
-                        }
+                        
                     }
                 }
             });
