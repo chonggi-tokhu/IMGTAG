@@ -8,9 +8,10 @@ function getImageRawData(thisobj, { nothex, savenewline, savespace }, cbfunc) {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', src, true);
         if (nothex) {
-            xhr.responseType = 'text'; // this will accept the response as an ArrayBuffer
+            xhr.responseType = 'text'; // this will accept the response as an Text
             xhr.send();
-            xhr.addEventListener("load", (text) => {
+            xhr.addEventListener("load", (text0) => {
+                var text = xhr.response;
                 if (!savenewline) {
                     text = text.replaceAll('\n', '').replaceAll(String.raw`
 `, '');
