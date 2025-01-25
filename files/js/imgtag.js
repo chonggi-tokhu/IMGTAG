@@ -112,11 +112,10 @@ var setimgdata = async (thisobj, cbfunc) => {
                         thisobj.canvas.width = thisobj.img.width;
                         thisobj.canvas.height = thisobj.img.height;
                         thisobj.ctx = thisobj.canvas.getContext("2d");
-                        if (ColourgreyShorterJS.checkString(thisobj.imgdata)) {
                             var imgdata_a = [];
                             var thisimgdata = '';
-                            for (var i = 0; i < thisobj.imgdata.length; i++) {
-                                thisimgdata += thisobj.imgdata[i];
+                            for (var i = 0; i < data.length; i++) {
+                                thisimgdata += data[i];
                                 if (i % 6 === 0) {
                                     imgdata_a.push(thisimgdata);
                                     thisimgdata = '';
@@ -131,15 +130,14 @@ var setimgdata = async (thisobj, cbfunc) => {
                                     x = 0;
                                     continue;
                                 } else {
-                                    x++;
-                                }
                                 thisobj.ctx.beginPath();
                                 thisobj.ctx.fillStyle = '#' + val;
                                 thisobj.ctx.fillRect(x, y, 1, 1);
                                 thisobj.ctx.closePath();
+                                    x++;
+                                }
                             }
-                        }
-                    
+                        
                 }
             })();
     return thisobj;
