@@ -121,6 +121,7 @@ var ifparsedataisraw = (data, hex) => {
     } else {
         parsedtype = data.split('img0')[0];
     }
+    console.log(parsedtype);
     if (parsedtype.includes('RAW')) {
         rtv = 'raw';
     } else if (parsedtype.includes('JSON')) {
