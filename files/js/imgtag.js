@@ -1,7 +1,7 @@
 var ColourgreyShorterJS = typeof require === 'function' ? require("./ColourgreyShorterCSSJS-0.0.0.js") : this['ColourgreyShorterJS'];
 function getImageRawData(thisobj, { nothex, savenewline, savespace }, cbfunc) {
-    var src = ColourgreyShorterJS.checkString(thisobj) ? thisobj : thisobj instanceof HTMLImageElement || thisobj instanceof Image ? thisobj.src : null;
-    if (null) {
+    var src = ColourgreyShorterJS.checkString(thisobj) ? thisobj : thisobj instanceof HTMLElement || thisobj instanceof Image ? thisobj.src : null;
+    if (src===null) {
         return Promise.resolve(false);
     }
     var mypromise = new Promise((resolve) => {
