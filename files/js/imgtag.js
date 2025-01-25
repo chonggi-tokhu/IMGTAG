@@ -6,8 +6,6 @@ function getImageRawData(thisobj, { nothex, savenewline, savespace }, cbfunc) {
     }
     var mypromise = new Promise((resolve) => {
         var xhr = new XMLHttpRequest();
-        xhr.setRequestHeader("mode", "no-cors");
-        xhr.setRequestHeader("origin", "http://localhost:3000");
         xhr.open('GET', src, true);
         if (nothex) {
             xhr.responseType = 'text'; // this will accept the response as an ArrayBuffer
