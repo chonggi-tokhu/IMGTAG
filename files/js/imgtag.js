@@ -84,7 +84,7 @@ var setimgdata = async (thisobj, cbfunc) => {
                             for (var i = 0; i < data.length; i++) {
                                 thisimgdata += data[i];
                                 //console.log(data[i]);
-                                if (i % 6 === 0) {
+                                if (i % 6 === 5) {
                                     imgdata_a.push(thisimgdata);
                                     thisimgdata = '';
                                 }
