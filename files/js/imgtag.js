@@ -262,6 +262,7 @@ class customImg extends HTMLElement {
             setimgdata(this, (thisobj, data) => {
                 this.imgdata = data;
                 if (true) {
+                        console.log(this);
                     if (thisobj.imgtype === 'canv') {
                         var newcanv = document.createElement("canvas");
                         this.canvas = shadow.appendChild(newcanv);
@@ -270,6 +271,7 @@ class customImg extends HTMLElement {
                         this.ctx = this.canvas.getContext("2d");
                         this.ctx.drawImage(this, 0, 0);
                     } else if (this.imgtype === 'raw') {
+                        console.log(this);
                         var newcanv = document.createElement("canvas");
                         this.canvas = shadow.appendChild(newcanv);
                         this.canvas.width = this.img.width;
