@@ -64,40 +64,6 @@ var setimgdata = async (thisobj, cbfunc) => {
                     thisobj.imgtype = israw;
                     data = thisobj.imgdata;
         console.log(data);
-                }
-            });
-        } else if (israw === 'json') {
-            getImageRawData(thisobj, { nothex: true }, (text, obj) => {
-                if (ColourgreyShorterJS.checkObj(obj)) {
-                    thisobj.imgdata = text.replace(text.split('img0')[0] + 'img0', '');
-                    thisobj.imgtype = israw;
-                    thisobj.imgdataobj = JSON.parse(text);
-                    data = thisobj.imgdata;
-        console.log(data);
-                }
-            });
-        } else if (israw === '3d') {
-            getImageRawData(thisobj, { nothex: true }, (text, obj) => {
-                if (ColourgreyShorterJS.checkObj(obj)) {
-                    thisobj.imgdata = text.replace(text.split('img0')[0] + 'img0', '');
-                    thisobj.imgtype = israw;
-                    data = thisobj.imgdata;
-        console.log(data);
-                }
-            });
-        } else if (israw === 'canv') {
-            getImageRawData(thisobj, { nothex: true }, (text, obj) => {
-                if (ColourgreyShorterJS.checkObj(obj)) {
-                    thisobj.imgdata = text.replace(text.split('img0')[0] + 'img0', '');
-                    thisobj.imgtype = israw;
-                    data = thisobj.imgdata;
-        console.log(data);
-                }
-            });
-        }
-    })()
-    await (async () => { if (typeof cbfunc !== 'function') { return; } cbfunc(thisobj, data); })();
-    await (async () => {
         var shadow = thisobj.attachShadow({ mode: "open" })
                     if (israw === 'canv') {
                         var newcanv = document.createElement("canvas");
@@ -143,6 +109,40 @@ var setimgdata = async (thisobj, cbfunc) => {
                             }
                         
                 }
+                }
+            });
+        } else if (israw === 'json') {
+            getImageRawData(thisobj, { nothex: true }, (text, obj) => {
+                if (ColourgreyShorterJS.checkObj(obj)) {
+                    thisobj.imgdata = text.replace(text.split('img0')[0] + 'img0', '');
+                    thisobj.imgtype = israw;
+                    thisobj.imgdataobj = JSON.parse(text);
+                    data = thisobj.imgdata;
+        console.log(data);
+                }
+            });
+        } else if (israw === '3d') {
+            getImageRawData(thisobj, { nothex: true }, (text, obj) => {
+                if (ColourgreyShorterJS.checkObj(obj)) {
+                    thisobj.imgdata = text.replace(text.split('img0')[0] + 'img0', '');
+                    thisobj.imgtype = israw;
+                    data = thisobj.imgdata;
+        console.log(data);
+                }
+            });
+        } else if (israw === 'canv') {
+            getImageRawData(thisobj, { nothex: true }, (text, obj) => {
+                if (ColourgreyShorterJS.checkObj(obj)) {
+                    thisobj.imgdata = text.replace(text.split('img0')[0] + 'img0', '');
+                    thisobj.imgtype = israw;
+                    data = thisobj.imgdata;
+        console.log(data);
+                }
+            });
+        }
+    })()
+    await (async () => { if (typeof cbfunc !== 'function') { return; } cbfunc(thisobj, data); })();
+    await (async () => {
             })();
     return thisobj;
 }
