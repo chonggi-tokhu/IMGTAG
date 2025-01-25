@@ -97,7 +97,7 @@ var setimgdata = async (thisobj, cbfunc) => {
         }
     })()
     await (async () => { if (typeof cbfunc !== 'function') { return; } cbfunc(thisobj, data); })();
-    await (async (data) => {
+    await (async () => {
                 if (ColourgreyShorterJS.checkString(thisobj.imgdata)) {
                     if (thisobj.imgtype === 'canv') {
                         var newcanv = document.createElement("canvas");
@@ -141,7 +141,7 @@ var setimgdata = async (thisobj, cbfunc) => {
                         }
                     }
                 }
-            })(data);
+            })();
     return thisobj;
 }
 /**
