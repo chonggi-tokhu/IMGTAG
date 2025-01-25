@@ -80,16 +80,16 @@ var setimgdata = async (thisobj, cbfunc) => {
                         thisobj.ctx = thisobj.canvas.getContext("2d");
                             var imgdata_a = [];
                             var thisimgdata = '';
-                                console.log(data);
+                                //console.log(data);
                             for (var i = 0; i < data.length; i++) {
                                 thisimgdata += data[i];
-                                console.log(data[i]);
+                                //console.log(data[i]);
                                 if (i % 6 === 0) {
                                     imgdata_a.push(thisimgdata);
                                     thisimgdata = '';
                                 }
                             }
-                                    console.log(imgdata_a);
+                                    //console.log(imgdata_a);
                             var x = 0;
                             var y = 0;
                             for (var i = 0; i < imgdata_a.length; i++) {
@@ -99,7 +99,7 @@ var setimgdata = async (thisobj, cbfunc) => {
                                     x = 0;
                                     continue;
                                 } else {
-                                    console.log(val);
+                                    //console.log(val);
                                 thisobj.ctx.beginPath();
                                 thisobj.ctx.fillStyle = '#' + val;
                                 thisobj.ctx.fillRect(x, y, 1, 1);
