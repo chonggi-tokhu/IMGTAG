@@ -43,7 +43,7 @@ function getImageRawData(thisobj, { nothex, savenewline, savespace }, cbfunc) {
 }
 var setimgdata = async (thisobj, cbfunc) => {
     var data = '';
-    var israw = 'hex';
+    var israw = 'raw';
     await getImageRawData(thisobj, { nothex: true }, (hex, obj) => {
         israw = ifparsedataisraw(hex);
         /* if (israw === 'hex') {
@@ -123,6 +123,7 @@ var ifparsedataisraw = (data, hex) => {
     }
     console.log(parsedtype);
     if (parsedtype.includes('RAW')) {
+        console.log('raw');
         rtv = 'raw';
     } else if (parsedtype.includes('JSON')) {
         rtv = 'json';
