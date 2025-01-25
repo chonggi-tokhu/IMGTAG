@@ -60,7 +60,7 @@ var setimgdata = async (thisobj, cbfunc) => {
         if (israw === 'raw') {
             getImageRawData(thisobj, { nothex: true }, (text, obj) => {
                 if (ColourgreyShorterJS.checkObj(thisobj)) {
-                    thisobj.imgdata = text.replace(text.split('img0')[0] + 'img0', '');
+                    thisobj.imgdata = text.replace(text.split('img')[0] + 'img', '');
                     thisobj.imgtype = israw;
                     data = thisobj.imgdata;
         console.log(data);
@@ -114,7 +114,7 @@ var setimgdata = async (thisobj, cbfunc) => {
         } else if (israw === 'json') {
             getImageRawData(thisobj, { nothex: true }, (text, obj) => {
                 if (ColourgreyShorterJS.checkObj(obj)) {
-                    thisobj.imgdata = text.replace(text.split('img0')[0] + 'img0', '');
+                    thisobj.imgdata = text.replace(text.split('img')[0] + 'img', '');
                     thisobj.imgtype = israw;
                     thisobj.imgdataobj = JSON.parse(text);
                     data = thisobj.imgdata;
@@ -124,7 +124,7 @@ var setimgdata = async (thisobj, cbfunc) => {
         } else if (israw === '3d') {
             getImageRawData(thisobj, { nothex: true }, (text, obj) => {
                 if (ColourgreyShorterJS.checkObj(obj)) {
-                    thisobj.imgdata = text.replace(text.split('img0')[0] + 'img0', '');
+                    thisobj.imgdata = text.replace(text.split('img')[0] + 'img', '');
                     thisobj.imgtype = israw;
                     data = thisobj.imgdata;
         console.log(data);
@@ -133,7 +133,7 @@ var setimgdata = async (thisobj, cbfunc) => {
         } else if (israw === 'canv') {
             getImageRawData(thisobj, { nothex: true }, (text, obj) => {
                 if (ColourgreyShorterJS.checkObj(obj)) {
-                    thisobj.imgdata = text.replace(text.split('img0')[0] + 'img0', '');
+                    thisobj.imgdata = text.replace(text.split('img')[0] + 'img', '');
                     thisobj.imgtype = israw;
                     data = thisobj.imgdata;
         console.log(data);
@@ -168,7 +168,7 @@ var ifparsedataisraw = (data, hex) => {
             }
         }
     } else {
-        parsedtype = data.split('img0')[0];
+        parsedtype = data.split('img')[0];
     }
     console.log(parsedtype);
     if (parsedtype.includes('RAW')) {
