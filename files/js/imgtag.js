@@ -261,7 +261,7 @@ class customImg extends HTMLElement {
             console.log('data');
             setimgdata(this, (thisobj, data) => {
                 this.imgdata = data;
-                if (ColourgreyShorterJS.checkString(thisobj.imgdata)) {
+                if (true) {
                     if (thisobj.imgtype === 'canv') {
                         var newcanv = document.createElement("canvas");
                         this.canvas = shadow.appendChild(newcanv);
