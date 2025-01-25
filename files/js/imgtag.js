@@ -244,6 +244,7 @@ class customImg extends HTMLElement {
         img.src = this.getAttribute("src");
         img.width = this.getAttribute("width");
         img.height = this.getAttribute("height");
+        this.src = this.getAttribute("src");
         this.img = this.appendChild(img);
         this.img.crossOrigin = 'anonymous';
         var shadow = this.attachShadow({ mode: "open" });
