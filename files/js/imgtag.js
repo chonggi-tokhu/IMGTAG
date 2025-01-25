@@ -10,7 +10,8 @@ function getImageRawData(thisobj, { nothex, savenewline, savespace }, cbfunc) {
         if (nothex) {
             xhr.responseType = 'text'; // this will accept the response as an Text
             xhr.send();
-            xhr.addEventListener("load", (text0) => {
+            xhr.onreadystatechange = () => {
+    if (xhr.readyState === 4) {
                 var text = xhr.response;
                 if (!savenewline) {
                     text = text.replaceAll('\n', '').replaceAll(String.raw`
@@ -20,7 +21,8 @@ function getImageRawData(thisobj, { nothex, savenewline, savespace }, cbfunc) {
                     text = text.replaceAll(' ', '');
                 }
                 resolve(text, thisobj);
-            });
+    }
+            }
         } else {
             xhr.responseType = 'arraybuffer'; // this will accept the response as an ArrayBuffer
             xhr.send();
