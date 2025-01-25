@@ -97,6 +97,51 @@ var setimgdata = async (thisobj, cbfunc) => {
         }
     })()
     await (async () => { if (typeof cbfunc !== 'function') { return; } cbfunc(thisobj, data); })();
+    await (async (data) => {
+                if (ColourgreyShorterJS.checkString(thisobj.imgdata)) {
+                    if (thisobj.imgtype === 'canv') {
+                        var newcanv = document.createElement("canvas");
+                        thisobj.canvas = shadow.appendChild(newcanv);
+                        thisobj.canvas.width = thisobj.width;
+                        thisobj.canvas.height = thisobj.height;
+                        thisobj.ctx = thisobj.canvas.getContext("2d");
+                        thisobj.ctx.drawImage(this, 0, 0);
+                    } else if (thisobj.imgtype === 'raw') {
+                        var newcanv = document.createElement("canvas");
+                        thisobj.canvas = shadow.appendChild(newcanv);
+                        thisobj.canvas.width = thisobj.width;
+                        thisobj.canvas.height = thisobj.height;
+                        thisobj.ctx = thisobj.canvas.getContext("2d");
+                        if (ColourgreyShorterJS.checkString(thisobj.imgdata)) {
+                            var imgdata_a = [];
+                            var thisimgdata = '';
+                            for (var i = 0; i < thisobj.imgdata.length; i++) {
+                                thisimgdata += thisobj.imgdata[i];
+                                if (i % 6 === 0) {
+                                    imgdata_a.push(thisimgdata);
+                                    thisimgdata = '';
+                                }
+                            }
+                            var x = 0;
+                            var y = 0;
+                            for (var i = 0; i < imgdata_a.length; i++) {
+                                var val = imgdata_a[i], idx = i, arr = imgdata_a;
+                                if (val === '//////') {
+                                    y++;
+                                    x = 0;
+                                    continue;
+                                } else {
+                                    x++;
+                                }
+                                thisobj.ctx.beginPath();
+                                thisobj.ctx.fillStyle = '#' + val;
+                                thisobj.ctx.fillRect(x, y, 1, 1);
+                                thisobj.ctx.closePath();
+                            }
+                        }
+                    }
+                }
+            })(data);
     return thisobj;
 }
 /**
