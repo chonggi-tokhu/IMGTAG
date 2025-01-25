@@ -99,15 +99,14 @@ var setimgdata = async (thisobj, cbfunc) => {
     await (async () => { if (typeof cbfunc !== 'function') { return; } cbfunc(thisobj, data); })();
     await (async () => {
         var shadow = thisobj.attachShadow({ mode: "open" })
-                if (ColourgreyShorterJS.checkString(thisobj.imgdata)) {
-                    if (thisobj.imgtype === 'canv') {
+                    if (israw === 'canv') {
                         var newcanv = document.createElement("canvas");
                         thisobj.canvas = shadow.appendChild(newcanv);
                         thisobj.canvas.width = thisobj.width;
                         thisobj.canvas.height = thisobj.height;
                         thisobj.ctx = thisobj.canvas.getContext("2d");
-                        thisobj.ctx.drawImage(this, 0, 0);
-                    } else if (thisobj.imgtype === 'raw') {
+                        thisobj.ctx.drawImage(thisobj, 0, 0);
+                    } else if (israw === 'raw') {
                         var newcanv = document.createElement("canvas");
                         thisobj.canvas = shadow.appendChild(newcanv);
                         thisobj.canvas.width = thisobj.width;
@@ -140,7 +139,7 @@ var setimgdata = async (thisobj, cbfunc) => {
                                 thisobj.ctx.closePath();
                             }
                         }
-                    }
+                    
                 }
             })();
     return thisobj;
