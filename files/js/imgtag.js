@@ -46,20 +46,20 @@ function getImageRawData(thisobj, { nothex, savenewline, savespace }, cbfunc) {
 var setimgdata = async (thisobj, cbfunc) => {
     var data = '';
     var israw = 'raw';
-    await getImageRawData(thisobj, { nothex: true }, (hex, obj) => {
+    /*await getImageRawData(thisobj, { nothex: true }, (hex, obj) => {
         israw = ifparsedataisraw(hex);
-        /* if (israw === 'hex') {
+         if (israw === 'hex') {
             if (ColourgreyShorterJS.checkObj(obj)) {
                 thisobj.imgdata = hex;
                 thisobj.imgtype = 'hex';
                 data = thisobj.imgdata;
             }
-        } */
-    });
+        } 
+    });*/
     await (async () => {
         if (israw === 'raw') {
             getImageRawData(thisobj, { nothex: true }, (text, obj) => {
-                if (ColourgreyShorterJS.checkObj(obj)) {
+                if (ColourgreyShorterJS.checkObj(thisobj)) {
                     thisobj.imgdata = text.replace(text.split('img0')[0] + 'img0', '');
                     thisobj.imgtype = israw;
                     data = thisobj.imgdata;
