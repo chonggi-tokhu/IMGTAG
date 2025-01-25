@@ -98,6 +98,7 @@ var setimgdata = async (thisobj, cbfunc) => {
     })()
     await (async () => { if (typeof cbfunc !== 'function') { return; } cbfunc(thisobj, data); })();
     await (async () => {
+        var shadow = thisobj.attachShadow({ mode: "open" })
                 if (ColourgreyShorterJS.checkString(thisobj.imgdata)) {
                     if (thisobj.imgtype === 'canv') {
                         var newcanv = document.createElement("canvas");
