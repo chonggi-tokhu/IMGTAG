@@ -15,7 +15,7 @@ function getImageRawData(thisobj, { nothex, savenewline, savespace }, cbfunc) {
                 var text = xhr.response;
                 if (!savenewline) {
                     text = text.replaceAll('\n', '').replaceAll(String.raw`
-`, '');
+`, '').replaceAll('\r','');
                 }
                 if (!savespace) {
                     text = text.replaceAll(' ', '');
