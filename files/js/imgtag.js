@@ -301,11 +301,11 @@ class customImg extends HTMLElement {
         this.src = this.getAttribute("src");
         this.img = this.appendChild(img);
         this.img.crossOrigin = 'anonymous';
-        var shadow = this.attachShadow({ mode: "open" });
+        //var shadow = this.attachShadow({ mode: "open" });
         if (this.img.src.endsWith(".img0")) {
             console.log('data');
             setimgdata(this, (thisobj, data) => {
-                this.imgdata = data;
+                /*this.imgdata = data;
                         console.log(this);
                     if (thisobj.imgtype === 'canv') {
                         var newcanv = document.createElement("canvas");
@@ -349,7 +349,7 @@ class customImg extends HTMLElement {
                             }
                         
                     }
-                }
+                }*/
             });
         }
     }
