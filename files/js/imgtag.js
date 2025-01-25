@@ -61,6 +61,7 @@ var setimgdata = async (thisobj, cbfunc) => {
                     thisobj.imgdata = text.replace(text.split('img0')[0] + 'img0', '');
                     thisobj.imgtype = israw;
                     data = thisobj.imgdata;
+        console.log(data);
                 }
             });
         } else if (israw === 'json') {
@@ -70,6 +71,7 @@ var setimgdata = async (thisobj, cbfunc) => {
                     thisobj.imgtype = israw;
                     thisobj.imgdataobj = JSON.parse(text);
                     data = thisobj.imgdata;
+        console.log(data);
                 }
             });
         } else if (israw === '3d') {
@@ -78,6 +80,7 @@ var setimgdata = async (thisobj, cbfunc) => {
                     thisobj.imgdata = text.replace(text.split('img0')[0] + 'img0', '');
                     thisobj.imgtype = israw;
                     data = thisobj.imgdata;
+        console.log(data);
                 }
             });
         } else if (israw === 'canv') {
@@ -86,6 +89,7 @@ var setimgdata = async (thisobj, cbfunc) => {
                     thisobj.imgdata = text.replace(text.split('img0')[0] + 'img0', '');
                     thisobj.imgtype = israw;
                     data = thisobj.imgdata;
+        console.log(data);
                 }
             });
         }
