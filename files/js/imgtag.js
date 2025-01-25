@@ -84,7 +84,7 @@ var setimgdata = async (thisobj, cbfunc) => {
                             for (var i = 0; i < data.length; i++) {
                                 thisimgdata += data[i];
                                 //console.log(data[i]);
-                                if (i % 6 === 5) {
+                                if (i % 6 === 1) {
                                     imgdata_a.push(thisimgdata);
                                     thisimgdata = '';
                                 }
@@ -99,7 +99,7 @@ var setimgdata = async (thisobj, cbfunc) => {
                                     x = 0;
                                     continue;
                                 } else {
-                                    //console.log(val);
+                                    console.log(val);
                                 thisobj.ctx.beginPath();
                                 thisobj.ctx.fillStyle = '#' + val;
                                 thisobj.ctx.fillRect(x, y, 1, 1);
